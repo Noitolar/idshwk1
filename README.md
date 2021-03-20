@@ -55,12 +55,12 @@ alert tcp $EXTERNAL_NET any -> $HOME_NET 8080
 |   msg   |     "TEST ALERT"      |                    -                    |
 |  flags  |           A           |               检测ACK类型               |
 | content | "I am IDS Homework I" |                    -                    |
-| offset  |          99           | content选项的修饰符，设定开始搜索的位置 |
-|  depth  |          101          | content选项的修饰符，设定搜索的最大深度 |
+| offset  |          100          | content选项的修饰符，设定开始搜索的位置 |
+|  depth  |          100          | content选项的修饰符，设定搜索的最大深度 |
 |   sid   |        114514         |       snort规则id，自己设一个试试       |
 
 综上，答案应该是：
 
-alert tcp $EXTERNAL_NET any -> $HOME_NET 8080 (msg: "TEST ALERT"; flags: A; content: "I am IDS Homework I"; offset: 99; depth: 101; sid: 114514)
+alert tcp $EXTERNAL_NET any -> $HOME_NET 8080 (msg: "TEST ALERT"; flags: A; content: "I am IDS Homework I"; offset: 100; depth: 100; sid: 114514)
 
 
